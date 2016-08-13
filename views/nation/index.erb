@@ -1,0 +1,15 @@
+<h2> Index</h2>
+
+<table>
+  <tr>
+    <th>Nation</th>
+  </tr>
+<% @nation.each do |nation| %>
+  <tr>
+    <td><a href="/nation/<%= nation.id %>"><%= nation.name %></a></td>
+  </tr>
+<% end %>
+</table>
+
+<a href="/">Home</a>
+<a href="/nation/new">Add Nation</a>

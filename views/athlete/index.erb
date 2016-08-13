@@ -1,0 +1,21 @@
+<h2> Index</h2>
+
+<p>List of Athletes</p>
+<table>
+  <tr>
+    <th>Athlete id</th>
+    <th>Athlete name</th>
+    <th>Athlete nation id</th>
+  </tr>
+  <% @athletes.each do |athlete|  %>
+  <tr>
+    <td><%= athlete.id %></a></td>
+    <td><a href="/athlete/<%= athlete.id %>"><%= athlete.name  %></td>
+    <td><%= athlete.nation_id  %></td>
+  </tr>
+  <% end %>
+</table>
+
+<a href="/">Home</a>
+<a href="/athlete/new">Add Athlete</a>
+

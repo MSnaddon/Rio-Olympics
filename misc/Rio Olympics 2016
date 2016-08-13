@@ -1,0 +1,47 @@
+Rio Olympics 2016
+
+It’s the Olympic Games in Rio! The organising body want you to help them out with an important feature for their website. They are looking for an app that will track the Nations, Athletes and results of Events.
+
+They would like to make it possible to add an Athlete, which will have an associated Nation. Event results should keep track of the athlete who got gold, silver and bronze as well as the event they participated in.
+
+They would ideally like:
+
+Nation medal results table with
+gold, silver and bronze count for each nation
+total points for each nation based on:
+5 for Gold
+3 for Silver
+1 for Bronze
+Be able to add an Athlete, Nation and Event result.
+
+
+-----------------------
+
+App to track Nations, Athletes and Events
+
+MVP functions
+- Add an athlete, Nation and Event
+- Read each ^^
+- Update Event (with results, should already be in database)
+- Standings displayed with points for medals.
+
+
+
+
+
+
+
+
+
+
+
+Possible further functionality:
+
+CRUD actions for Athlete, Nation and event results
+Listing of each event with the medalists
+Create route that sends down nation results data as JSON
+
+
+
+---------------------------
+user profiles
