@@ -23,7 +23,7 @@ e = Event.new({
   })
 
 
-a = Nation.find(2)
-b = a.athletes
+s = Standings.new
+s.update_standings_nations
 binding.pry
 nil

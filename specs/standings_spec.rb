@@ -27,4 +27,10 @@ class TestStandings < Minitest::Test
     assert_equal(2, medals[:gold].length)
   end
 
+  def test_points
+    medals = Standings.nation_medals(@nation)
+    points = Standings.points(medals)
+    assert_equal(10, points)
+  end
+
 end

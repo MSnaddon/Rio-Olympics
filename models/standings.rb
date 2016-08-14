@@ -1,4 +1,29 @@
+
+
 class Standings
+
+  attr_reader :standings_athletes, :standings_nations
+
+
+  def initialize
+    @standings_nations = []
+    @standings_athlete = {}
+    
+  end
+
+  def update_standings_nations
+    @standings_nations = []
+    Nation.all.each do |nation|
+      standing = {}
+      standing.merge!(Standings.nation_medals(nation))
+      points = Standings.points(standing) #standing only has medals at this point and so works like a medals hash
+      standing.each {|k,v| standing[k] = v.length}
+      standing[:points] = points
+      standing[:nation_name] = nation.name
+      @standings_nations.push(standing)
+    end
+  end
+
   def self.athlete_medals(athlete)
     events = athlete.participation
     medals = {
@@ -12,16 +37,6 @@ class Standings
       medals[:bronze] << event if event.bronze_winner == athlete.id
     end
     return medals
-      # take in events the athlete has participated
-      # takes all of each type of medal and puts event objects in array
-      # assign arrays to values matching keys in output hash.
-
-      #return result eg.. 
-      #{
-      # gold: [event1, event2]
-      # silver: [event3]
-      # bronze: []
-      # }
   end
 
   def self.nation_medals(nation)
@@ -39,8 +54,11 @@ class Standings
       }
     end
     return nation_medals
-      # get all athletes in nation
-      # get medals using Standings.athlete_medals
-      # merge athletes to get hash of medals with the events listed alongside.
+
+  end
+
+  def self.points(medals)
+    points = medals[:gold].length*5 + medals[:silver].length * 3 + medals[:bronze].length
+    return points
   end
 end
