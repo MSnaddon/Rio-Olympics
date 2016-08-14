@@ -11,6 +11,7 @@ require_relative('models/nation')
 require_relative('models/event')
 require_relative('models/athlete')
 require_relative('models/standings')
+require_relative('models/participant')
 
 get "/" do
   calc = Standings.new()

@@ -9,7 +9,7 @@ class Nation
 
   def save
     sql = ("INSERT INTO nations (name) VALUES ('#{@name}') RETURNING *;")
-    @id = SqlRunner.run(sql).first['id']
+    @id = SqlRunner.run(sql).first['id'].to_i
   end
 
   def update()
