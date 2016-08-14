@@ -15,8 +15,9 @@ class TestStandings
     @standings = Standings.new()
   end
 
-  def test_participation
-    
+  def test_athlete_medals
+    medals = Standings.athlete_medals(@athlete)
+    assert_equal(1, medals[:gold].length)
   end
 
 
