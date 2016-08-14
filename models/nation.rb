@@ -22,6 +22,11 @@ class Nation
     SqlRunner.run(sql)
   end
 
+  def athletes
+    sql = "SELECT a.* FROM athletes a WHERE a.nation_id = #{@id}"
+    return SqlRunner.run(sql).map {|athlete| Athlete.new(athlete)}
+  end
+
   def self.all
     sql = ("SELECT * FROM nations")
     return SqlRunner.run(sql).map {|nation| Nation.new(nation)}

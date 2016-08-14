@@ -5,7 +5,7 @@ class Athlete
   def initialize(options)
     @name = options['name']
     @nation_id = options['nation_id']
-    @id = options['id']
+    @id = options['id'].to_i
   end
 
   def save

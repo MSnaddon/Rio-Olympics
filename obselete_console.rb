@@ -22,6 +22,8 @@ e = Event.new({
   'bronze_winner' => 5
   })
 
-a = Athlete.all[0]
+
+a = Nation.find(2)
+b = a.athletes
 binding.pry
 nil
