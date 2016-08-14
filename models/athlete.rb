@@ -18,14 +18,38 @@ class Athlete
     SqlRunner.run(sql)
   end
 
+
   def delete
-    sql = "DELETE FROM athletes a WHERE a.id = #{id}"
+    sql = "DELETE FROM athletes a WHERE a.id = #{@id}"
     SqlRunner.run(sql)
   end
+  
+  def participation
+    sql = "SELECT e.* FROM events e INNER JOIN participants p ON e.id = p.event_id WHERE p.athlete_id = #{@id}"
+    return SqlRunner.run(sql).map {|event| Event.new(event)}
+  end
+
+  # Removed in favour of extracting medals from events participated
+
+  # def events_gold
+  #   sql = "SELECT * FROM events e WHERE e.gold_winner = #{@id}"
+  #   return SqlRunner.run(sql).map {|event| Event.new(event)}
+  # end
+
+  # def events_silver
+  #   sql = "SELECT * FROM events e WHERE e.silver_winner = #{@id}"
+  #   return SqlRunner.run(sql).map {|event| Event.new(event)}
+  # end
+
+  # def events_bronze
+  #   sql = "SELECT * FROM events e WHERE e.bronze_winner = #{@id}"
+  #   return SqlRunner.run(sql).map {|event| Event.new(event)}
+  # end
+
 
   def self.all
     sql = ("SELECT * FROM athletes")
-    return SqlRunner.run(sql).map {|nation| Athlete.new(nation)}
+    return SqlRunner.run(sql).map {|athlete| Athlete.new(athlete)}
   end
 
   def self.find(id)
