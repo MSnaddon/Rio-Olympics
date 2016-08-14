@@ -13,7 +13,8 @@ require_relative('models/athlete')
 require_relative('models/standings')
 
 get "/" do
-  @standings = Standings.new
-  @standings.update_standings_nations
+  calc = Standings.new()
+  calc.update_standings_nations
+  @current_standings = calc.standings_nations
   erb(:index)
 end
