@@ -13,7 +13,7 @@ name VARCHAR(255)
 CREATE TABLE athletes(
 id SERIAL8 PRIMARY KEY,
 name VARCHAR(255),
-nation_id int8 REFERENCES nations(id)
+nation_id int8 REFERENCES nations(id) ON DELETE CASCADE
 );
 
 CREATE TABLE events(

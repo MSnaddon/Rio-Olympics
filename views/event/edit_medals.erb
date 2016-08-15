@@ -2,19 +2,19 @@
   <label for="gold_winner">Gold medalist</label>
   <select name="gold_winner">
   <% @event.athletes.each do |athlete| %>
-    <option value="<%= athlete.id %>"><%= athlete.name %></option>
+    <option value="<%= athlete.id %>" <%= "selected" if @event.gold_winner == athlete.id %>><%= athlete.name %></option>
   <% end %>
   </select>
   <label for="silver_winner">Silver medalist</label>
   <select name="silver_winner">
   <% @event.athletes.each do |athlete| %>
-    <option value="<%= athlete.id %>"><%= athlete.name %></option>
+    <option value="<%= athlete.id %>" <%= "selected" if @event.silver_winner == athlete.id %>><%= athlete.name %></option>
   <% end %>
   </select>
   <label for="bronze_winner">Bronze medalist</label>
   <select name="bronze_winner">
   <% @event.athletes.each do |athlete| %>
-    <option value="<%= athlete.id %>"><%= athlete.name %></option>
+    <option value="<%= athlete.id %>" <%= "selected" if @event.bronze_winner == athlete.id %>><%= athlete.name %></option>
   <% end %>
   </select>
 

@@ -20,3 +20,19 @@ get "/nation/:id" do
   erb(:'nation/show')
 end
 
+post "/nation/:id" do
+  nation = Nation.new(params)
+  nation.update
+  redirect(to("nation/#{params[:id]}"))
+end
+
+
+get "/nation/:id/edit" do
+  @nation = Nation.find(params[:id])
+  erb(:'nation/edit')
+end
+
+post "/nation/:id/delete" do
+  Nation.delete(params[:id])
+  redirect(to("nation/#{params[:id]}"))
+end

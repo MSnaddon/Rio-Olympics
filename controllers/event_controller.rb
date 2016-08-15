@@ -48,18 +48,16 @@ end
 post "/event/:id" do
   event = Event.new(params)
   event.update
-  redirect(to("/event"))
+  redirect(to("/event/#{params[:id]}"))
 end
 
 #breaking restful, curse you javascript!!!
 get "/event/:id/edit/ammend" do
   @event = Event.find(params[:id])
   erb(:'event/edit_ammend')
-
 end
 
 get "/event/:id/edit/medals" do
-
   @event = Event.find(params[:id])
   erb(:'event/edit_medals')
 end

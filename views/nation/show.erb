@@ -1,1 +1,6 @@
-<h2> Nation: <%= @nation.name %><h2>
+<h2> Nation: <%= @nation.name %></h2>
+
+<a href="/nation/<%= @nation.id %>/edit">Edit</a>
+<form action="/nation/<%= @nation.id %>/delete" method="post">
+  <input type="submit" value="Delete">
+</form>

@@ -1,0 +1,26 @@
+<h2>list of participants</h2>
+<ul>
+  <% @participations.each do |participant| %>
+    <li><%= Athlete.find(participant.athlete_id).name %></li><form action="/participant/<%= participant.id %>/delete" method="post"><input type="submit" value="Delete"></form>
+  <% end %>
+</ul>
+
+<form action="/participant/create" method="post">
+
+<label for="athlete_id">Add athlete -> </label>
+<select name="athlete_id">
+  <% @athletes.each do |athlete| %>
+    <% unless @exclude_list.include?(athlete.id)%>
+      <option value="<%= athlete.id %>"><%= athlete.name %></option>
+    <% end %>
+  <% end %>
+</select>
+<input type="hidden" name="event_id" value="<%= @participations[0].event_id%>">
+
+
+
+<input type="submit" value="Add participant">
+</form>
+
+
+<!-- form to create, present athletes, submit evit id and corresponding athlete. remove participating ids -->

@@ -17,7 +17,7 @@ class Nation
     SqlRunner.run(sql)
   end
 
-  def delete
+  def self.delete(id)
     sql = "DELETE FROM nations n WHERE n.id = #{id}"
     SqlRunner.run(sql)
   end
