@@ -1,7 +1,27 @@
-<%= @event.inspect %>
+<form action="/event/<%= @event.id %>" method="post">
+  <label for="name" >Event:</label>
+  <input type="text" name="name" value="<%= @event.name %>">
 
-<form action="/event/<%= @event.id %>" method="POST">
+  <label for="gold_winner">Gold medalist</label>
+  <select name="gold_winner">
+  <% @event.athletes.each do |athlete| %>
+    <option value="<%= athlete.id %>"><%= athlete.name %></option>
+  <% end %>
+  </select>
+  <label for="silver_winner">Silver medalist</label>
+  <select name="silver_winner">
+  <% @event.athletes.each do |athlete| %>
+    <option value="<%= athlete.id %>"><%= athlete.name %></option>
+  <% end %>
+  </select>
+  <label for="bronze_winner">Bronze medalist</label>
+  <select name="bronze_winner">
+  <% @event.athletes.each do |athlete| %>
+    <option value="<%= athlete.id %>"><%= athlete.name %></option>
+  <% end %>
+  </select>
 
-  
-  
+  <input type="submit" name="Make changes">
+
+
 </form>

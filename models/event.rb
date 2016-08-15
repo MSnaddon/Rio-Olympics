@@ -22,6 +22,11 @@ class Event
     SqlRunner.run(sql)
   end
 
+  def athletes
+    sql = "SELECT a.* FROM athletes a INNER JOIN participants p ON a.id = p.athlete_id WHERE p.event_id = #{@id}"
+    return SqlRunner.run(sql).map {|athlete| Athlete.new(athlete)}
+  end
+
   def delete
     sql = "DELETE FROM events e WHERE e.id = #{@id}"
     SqlRunner.run(sql)
@@ -29,7 +34,7 @@ class Event
 
   def self.all
     sql = ("SELECT * FROM events")
-    return SqlRunner.run(sql).map {|nation| Event.new(nation)}
+    return SqlRunner.run(sql).map {|event| Event.new(event)}
   end
 
   def self.find(id)

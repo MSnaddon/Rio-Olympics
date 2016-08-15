@@ -42,6 +42,23 @@ end
 
 get "/event/:id/edit" do
   @event = Event.find(params[:id])
-  @athletes = Athlete.all
   erb( :'event/edit' )
 end
+
+post "/event/:id" do
+  event = Event.new(params)
+  binding.pry
+  event.update
+
+end
+
+
+# get "/event/:id/edit/ammend" do
+
+# end
+# get "/event/:id/edit/edit" do
+
+# end
+# get "/event/:id/edit/change_participants" do
+
+# end
