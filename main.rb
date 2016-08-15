@@ -15,8 +15,8 @@ require_relative('models/standings')
 require_relative('models/participant')
 
 get "/" do
-  calc = Standings.new()
-  calc.update_standings_nations
-  @current_standings = calc.standings_nations
+  # calc = Standings.new()
+  # calc.update_standings_nations
+  # @current_standings = calc.standings_nations
   erb(:index)
 end

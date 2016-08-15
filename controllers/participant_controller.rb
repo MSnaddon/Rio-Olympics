@@ -2,6 +2,7 @@ get "/participant/:event_id" do
   @participations = Participant.find_by_event(params[:event_id])
   @exclude_list = @participations.map {|participant| participant.athlete_id}
   @athletes = Athlete.all
+  @event_id = params[:event_id]
   erb(:'participant/show')
 end
 

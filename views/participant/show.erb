@@ -15,12 +15,12 @@
     <% end %>
   <% end %>
 </select>
-<input type="hidden" name="event_id" value="<%= @participations[0].event_id%>">
+<input type="hidden" name="event_id" value="<%= @event_id %>">
 
 
 
 <input type="submit" value="Add participant">
 </form>
-
+<a href="/event/<%= @event_id %>">Back to Event</a>
 
 <!-- form to create, present athletes, submit evit id and corresponding athlete. remove participating ids -->
