@@ -2,8 +2,11 @@
 
 <h3> <%= @event.name %> </h3>
 <p>
-<a href="/event/<%= @event.id %>/edit">Ammend</a>
-<a href="/event/<%= @event.id %>/edit">Award Medals</a>
+<a href="/event/<%= @event.id %>/edit/ammend">Ammend </a>
+<a href="/event/<%= @event.id %>/edit/medals">Award Medals</a>
+<form action="/event/<%= @event.id %>/delete" method="post">
+  <input type="submit" value="Delete">
+</form>
 </p>
 
 <a href="/">Home</a>
