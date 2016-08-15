@@ -13,7 +13,7 @@ class Athlete
     @id = SqlRunner.run(sql).first['id']
   end
 
-  def update()
+  def update
     sql = ("UPDATE athletes a SET name = '#{@name}', nation_id = #{@nation_id} WHERE a.id = #{@id}")
     SqlRunner.run(sql)
   end
@@ -45,7 +45,10 @@ class Athlete
   #   sql = "SELECT * FROM events e WHERE e.bronze_winner = #{@id}"
   #   return SqlRunner.run(sql).map {|event| Event.new(event)}
   # end
-
+  def self.update(options)
+    sql = ("UPDATE athletes a SET name = '#{options['name']}', nation_id = #{options['nation_id']} WHERE a.id = #{options['id']}")
+    SqlRunner.run(sql)
+  end
 
   def self.all
     sql = ("SELECT * FROM athletes")

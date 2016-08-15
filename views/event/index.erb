@@ -3,7 +3,9 @@
 <h3>List of events</h3>
 <ul>
 <% @events.each do |event| %>
-  <li><a href="/event/<%= event.id %>"><%= event.name %></li>
+  <li><a href="/event/<%= event.id %>"><%= event.name %><form action="/event/<%= event.id %>/delete" method="post"><input type="submit" value="Delete">
+  </form>
+  </li>  
 <% end %>
 </ul>
 

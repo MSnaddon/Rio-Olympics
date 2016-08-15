@@ -22,6 +22,7 @@ class Standings
       standing[:nation_name] = nation.name
       @standings_nations.push(standing)
     end
+
     @standings_nations.sort_by!{|standing| [standing[:gold],standing[:silver], standing[:bronze]]}.reverse!
   end
 

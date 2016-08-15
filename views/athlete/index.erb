@@ -12,6 +12,9 @@
     <td><%= athlete.id %></a></td>
     <td><a href="/athlete/<%= athlete.id %>"><%= athlete.name  %></td>
     <td><%= athlete.nation_id  %></td>
+    <td> <form action="/athlete/<%= athlete.id %>/delete" method="post">
+  <input type="submit" value="Delete"></form></td>
+  </form>
   </tr>
   <% end %>
 </table>

@@ -1,0 +1,16 @@
+<form action="/athlete/<%= @athlete.id %>" method="post">
+
+
+<label for="name">Name</label>
+<input type="text" name="name" value="<%= @athlete.name %>">
+
+<label for="nation_id">Nation</label>
+<select name="nation_id">
+  <% @nations.each do |nation|  %>
+    <option value="<%= nation.id %>" <%= 'selected' if @athlete.nation_id == nation.id %>><%= nation.name %></option>
+  <% end %>
+</select>
+
+<input type="submit" name="Submit">
+
+</form>

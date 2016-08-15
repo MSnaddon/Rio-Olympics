@@ -23,7 +23,7 @@ class Event
   end
 
   def delete
-    sql = "DELETE FROM events e WHERE e.id = #{id}"
+    sql = "DELETE FROM events e WHERE e.id = #{@id}"
     SqlRunner.run(sql)
   end
 

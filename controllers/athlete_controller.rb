@@ -8,6 +8,17 @@ get "/athlete/new" do
   erb(:'athlete/new')
 end
 
+get "/athlete/:id/edit" do
+  @athlete = Athlete.find(params[:id])
+  @nations = Nation.all
+  erb(:'athlete/edit')
+end
+
+post "/athlete/:id" do
+  Athlete.update(params)
+  redirect(to("/athlete/#{params[:id]}"))
+end
+
 post "/athlete" do
   @athlete = Athlete.new(params)
   @athlete.save
@@ -20,3 +31,13 @@ get "/athlete/:id" do
   @athlete = Athlete.find(params[:id])
   erb(:'athlete/show')
 end
+
+
+
+
+post "/athlete/:id/delete" do
+  @athlete = Athlete.find(params[:id])
+  @athlete.delete
+  redirect(to('/athlete'))
+end
+
