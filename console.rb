@@ -7,6 +7,9 @@ require_relative('models/standings')
 require_relative('models/participant')
 
 
+b = Standings.new
+a = Athlete.all[2]
+b.update_standings_athlete(a)
 
 binding.pry
 nil

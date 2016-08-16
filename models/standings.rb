@@ -14,24 +14,13 @@ class Standings
 
   def update_standings_athlete(athlete)
     result = {name: athlete.name}
-    result.merge!(Standings.athlete_medals(athelte))
-
+    result.merge!(Standings.athlete_medals(athlete))
+    p = Standings.points(result)
     g = result[:gold].count
     s = result[:silver].count
     b = result[:bronze].count
-
-
-
-
-
-
-    
-    # Gold: x Silver: x Bronze x Points xx
-    #gold => [ list of event objects ]
-    #silver = > [ list of event objects ]
-    #bronze => [ list of event objects ]
-
-    binding.pry
+    result[:gsbp] = [g,s,b,p]
+    @standings_athlete = result
   end
 
 

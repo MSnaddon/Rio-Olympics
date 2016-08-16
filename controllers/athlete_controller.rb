@@ -29,6 +29,8 @@ end
 
 get "/athlete/:id" do
   @athlete = Athlete.find(params[:id])
+  standings = Standings.new()
+  @result = standings.standings_athlete
   erb(:'athlete/show')
 end
 
