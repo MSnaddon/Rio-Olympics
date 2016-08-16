@@ -36,6 +36,12 @@ end
 get "/event/:id" do
   @event = Event.find(params[:id])
   @athletes = @event.athletes
+  @medalists = {}
+  @athletes.each do |athlete|
+    @medalists[:gold] = athlete if athlete.id == @event.gold_winner
+    @medalists[:silver] = athlete if athlete.id == @event.silver_winner
+    @medalists[:bronze] = athlete if athlete.id == @event.bronze_winner
+  end
   erb(:'event/show')
 end
 

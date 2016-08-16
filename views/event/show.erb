@@ -5,17 +5,26 @@
 <h3> <%= @event.name %> </h3>
 
 <table>
-<tr>
-<td colspan="2">
- <strong>Participants</strong>
- </td>
-</tr>
-<% @athletes.each do |athlete| %>
-<tr>
-  <td><%= athlete.name %></td>
-  <td><%= athlete.nation.name %></td>
-</tr>
-<% end %>
+  <tr>
+    <th> </th>
+    <th>Medalists</th>
+    <th>Nation</th>
+  </tr>
+  <tr>
+    <td>Gold</td>
+    <td><%= @medalists[:gold].name %></td>
+    <td><%= @medalists[:gold].nation.name %></td>
+  </tr>
+  <td>Silver</td>
+  <td><%= @medalists[:silver].name %></td>
+  <td><%= @medalists[:silver].nation.name %></td>
+  <tr>
+  </tr>
+  <tr>
+    <td>Bronze</td>
+    <td><%= @medalists[:bronze].name %></td>
+    <td><%= @medalists[:bronze].nation.name %></td>
+  </tr>
 </table>
 
 
