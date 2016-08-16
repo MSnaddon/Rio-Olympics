@@ -1,6 +1,7 @@
 require ('pry-byebug')
 require ('sinatra')
 require ('sinatra/contrib/all')
+require ('json')
 
 require_relative('controllers/athlete_controller')
 require_relative('controllers/event_controller')
@@ -15,8 +16,12 @@ require_relative('models/standings')
 require_relative('models/participant')
 
 get "/" do
-  # calc = Standings.new()
-  # calc.update_standings_nations
-  # @current_standings = calc.standings_nations
   erb(:index)
+end
+
+get "/json" do
+  calc = Standings.new()
+  calc.update_standings_nations
+  @current_standings = calc.standings_nations
+  json (@current_standings)
 end

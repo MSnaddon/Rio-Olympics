@@ -34,5 +34,5 @@ end
 
 post "/nation/:id/delete" do
   Nation.delete(params[:id])
-  redirect(to("nation/#{params[:id]}"))
+  redirect(to("/nation"))
 end

@@ -3,15 +3,13 @@
 <p>List of Athletes</p>
 <table>
   <tr>
-    <th>Athlete id</th>
-    <th>Athlete name</th>
-    <th>Athlete nation id</th>
+    <th>Athlete Name</th>
+    <th>Athlete Nation</th>
   </tr>
   <% @athletes.each do |athlete|  %>
   <tr>
-    <td><%= athlete.id %></a></td>
     <td><a href="/athlete/<%= athlete.id %>"><%= athlete.name  %></td>
-    <td><%= athlete.nation_id  %></td>
+    <td><%= athlete.nation.name  %></td>
     <td> <form action="/athlete/<%= athlete.id %>/delete" method="post">
   <input type="submit" value="Delete"></form></td>
   </form>

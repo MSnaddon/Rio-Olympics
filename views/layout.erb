@@ -5,10 +5,18 @@
   <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
-<h1>Rio Lolympics</h1>
 
-  <%= yield %>
-  <%= erb :standings %>
+  <div id="main">
+    <div id="header">
+      <h1>UnRio Lolympics</h1>
+    </div>
+    <div id="yielder">
+      <%= yield %>
+    </div>
+  </div>
+  <div id="standings">
+    <%= erb :standings %>
+  </div>
 
 </body>
 </html>

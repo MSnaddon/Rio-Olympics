@@ -2,7 +2,13 @@
 
 <ol>
 <% @nation.athletes.each do |athlete| %>
-  <li><%= athlete.name %></li>
+  <li><%= athlete.name %>
+    <ul>
+    <% athlete.participation.each do |event| %>
+    <li><%= event.name  %></li>
+    <% end %>
+    </ul>
+  </li>
 <% end %>
 </ol>
 <a href="/nation">Back</a>
