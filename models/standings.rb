@@ -11,6 +11,30 @@ class Standings
     
   end
 
+
+  def update_standings_athlete(athlete)
+    result = {name: athlete.name}
+    result.merge!(Standings.athlete_medals(athelte))
+
+    g = result[:gold].count
+    s = result[:silver].count
+    b = result[:bronze].count
+
+
+
+
+
+
+    
+    # Gold: x Silver: x Bronze x Points xx
+    #gold => [ list of event objects ]
+    #silver = > [ list of event objects ]
+    #bronze => [ list of event objects ]
+
+    binding.pry
+  end
+
+
   def update_standings_nations
     @standings_nations = []
     Nation.all.each do |nation|

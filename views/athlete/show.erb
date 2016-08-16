@@ -1,7 +1,7 @@
 <h2>Show</h2>
 
 <h3><%= @athlete.name  %></h3>
-<p>Nation : <%= @athlete.nation_id %> </p>
+<p>Nation : <%= @athlete.nation.name %> </p>
 
 <p><a href="/athlete/<%= @athlete.id %>/edit ">Edit</a>
 <form action="/athlete/<%= @athlete.id %>/delete" method="post"><input type="submit" value="Delete"></form></p>
