@@ -4,6 +4,7 @@
 
 <h3> <%= @event.name %> </h3>
 
+<% if @medalists[:gold] != nil %>
 <table>
   <tr>
     <th> </th>
@@ -26,7 +27,7 @@
     <td><%= @medalists[:bronze].nation.name %></td>
   </tr>
 </table>
-
+<% end %>
 
 <table>
 <tr>
