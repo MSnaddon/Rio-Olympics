@@ -1,7 +1,10 @@
 <h2> Nation: <%= @nation.name %></h2>
 
-
-
+<ol>
+<% @nation.athletes.each do |athlete| %>
+  <li><%= athlete.name %></li>
+<% end %>
+</ol>
 <a href="/nation">Back</a>
 <a href="/nation/<%= @nation.id %>/edit">Edit</a>
 <form action="/nation/<%= @nation.id %>/delete" method="post">
