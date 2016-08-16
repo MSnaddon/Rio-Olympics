@@ -36,9 +36,6 @@ end
 get "/event/:id" do
   @event = Event.find(params[:id])
   @athletes = @event.athletes
-  
-
-  #Need to have a event.medals_awarded? helper function for the output
   erb(:'event/show')
 end
 

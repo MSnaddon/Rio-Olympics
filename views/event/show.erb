@@ -4,6 +4,39 @@
 
 <h3> <%= @event.name %> </h3>
 
+<table>
+<tr>
+<td colspan="2">
+ <strong>Participants</strong>
+ </td>
+</tr>
+<% @athletes.each do |athlete| %>
+<tr>
+  <td><%= athlete.name %></td>
+  <td><%= athlete.nation.name %></td>
+</tr>
+<% end %>
+</table>
+
+
+<table>
+<tr>
+<td colspan="2">
+ <strong>Participants</strong>
+ </td>
+</tr>
+<% @athletes.each do |athlete| %>
+<tr>
+  <td><%= athlete.name %></td>
+  <td><%= athlete.nation.name %></td>
+</tr>
+<% end %>
+</table>
+
+
+
+
+
 
 
 <p><a href="/participant/<%= @event.id %>">Add/Remove participants</a></p>
