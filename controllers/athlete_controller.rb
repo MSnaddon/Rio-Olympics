@@ -32,9 +32,6 @@ get "/athlete/:id" do
   erb(:'athlete/show')
 end
 
-
-
-
 post "/athlete/:id/delete" do
   @athlete = Athlete.find(params[:id])
   @athlete.delete

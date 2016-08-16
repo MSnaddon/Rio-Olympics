@@ -29,6 +29,10 @@ class Athlete
     return SqlRunner.run(sql).map {|event| Event.new(event)}
   end
 
+  def nation
+    Nation.find(@nation_id)
+  end
+
   # Removed in favour of extracting medals from events participated
 
   # def events_gold
@@ -45,6 +49,7 @@ class Athlete
   #   sql = "SELECT * FROM events e WHERE e.bronze_winner = #{@id}"
   #   return SqlRunner.run(sql).map {|event| Event.new(event)}
   # end
+
   def self.update(options)
     sql = ("UPDATE athletes a SET name = '#{options['name']}', nation_id = #{options['nation_id']} WHERE a.id = #{options['id']}")
     SqlRunner.run(sql)
