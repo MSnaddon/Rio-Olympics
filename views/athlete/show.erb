@@ -3,6 +3,56 @@
 <h3><%= @athlete.name  %></h3>
 <p>Nation : <%= @athlete.nation.name %> </p>
 
+<table>
+  <tr>
+    <th>Gold</th>
+    <th>Silver</th>
+    <th>Bronze</th>
+    <th>Points</th>
+  </tr>
+  <tr>
+    <td><%= @result[:gold].count %></td>
+    <td><%= @result[:silver].count %></td>
+    <td><%= @result[:bronze].count %></td>
+    <td><%= @result[:points] %></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Events awarded gold</th>
+    <th>Events awarded silver</th>
+    <th>Events awarded bronze</th>
+  </tr>
+  <tr>
+    <td>
+      <% @result[:gold].each do |event| %>
+        <%= event.name %>
+        <br>
+      <%end%>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <% @result[:silver].each do |event| %>
+        <%= event.name %>
+        <br>
+      <%end%>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <% @result[:bronze].each do |event| %>
+        <%= event.name %>
+        <br>
+      <%end%>
+    </td>
+  </tr>
+
+</table>
+
+
+
 <p><a href="/athlete/<%= @athlete.id %>/edit ">Edit</a>
 <form action="/athlete/<%= @athlete.id %>/delete" method="post"><input type="submit" value="Delete"></form></p>
 <a href="/">Home</a>

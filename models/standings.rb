@@ -2,7 +2,7 @@
 
 class Standings
 
-  attr_reader :standings_athletes, :standings_nations
+  attr_reader :standings_athlete, :standings_nations
 
 
   def initialize
@@ -11,15 +11,11 @@ class Standings
     
   end
 
-
+  #Coult be refactored into self method and variable names changed for readability
   def update_standings_athlete(athlete)
-    result = {name: athlete.name}
+    result = {}
     result.merge!(Standings.athlete_medals(athlete))
-    p = Standings.points(result)
-    g = result[:gold].count
-    s = result[:silver].count
-    b = result[:bronze].count
-    result[:gsbp] = [g,s,b,p]
+    result[:points] = Standings.points(result)
     @standings_athlete = result
   end
 

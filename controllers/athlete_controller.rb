@@ -29,8 +29,11 @@ end
 
 get "/athlete/:id" do
   @athlete = Athlete.find(params[:id])
+  #standings could be refactored into self method for a one-line solution
   standings = Standings.new()
+  standings.update_standings_athlete(@athlete)
   @result = standings.standings_athlete
+
   erb(:'athlete/show')
 end
 
