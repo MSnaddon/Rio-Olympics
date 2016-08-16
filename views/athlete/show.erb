@@ -18,38 +18,36 @@
   </tr>
 </table>
 
-<table>
-  <tr>
-    <th>Events awarded gold</th>
-    <th>Events awarded silver</th>
-    <th>Events awarded bronze</th>
-  </tr>
-  <tr>
-    <td>
-      <% @result[:gold].each do |event| %>
-        <%= event.name %>
-        <br>
-      <%end%>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <% @result[:silver].each do |event| %>
-        <%= event.name %>
-        <br>
-      <%end%>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <% @result[:bronze].each do |event| %>
-        <%= event.name %>
-        <br>
-      <%end%>
-    </td>
-  </tr>
+<p><h4>Events awarded gold </h4><ul>
+  <% @result[:gold].each do |event| %>
+    <li><%= event.name %></li>
+  <br>
+<%end%>
+</ul>
+</p>
+<p><h4>Events awarded silver </h4><ul>
+  <% @result[:silver].each do |event| %>
+    <li><%= event.name %></li>
+  <br>
+<%end%>
+</ul>
+</p>
+<p><h4>Events awarded bronze </h4><ul>
+  <% @result[:bronze].each do |event| %>
+    <li><%= event.name %></li>
+  <br>
+<%end%>
+</ul>
+</p>
 
-</table>
+<h5>Paticipated:</h5>
+<p>
+<ul>
+  <% @athlete.participation.each do |event|  %>
+    <li><%= event.name %></li>
+  <% end %>
+</ul>
+</p>
 
 
 

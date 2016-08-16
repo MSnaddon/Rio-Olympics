@@ -18,7 +18,7 @@ class Event
   end
 
   def update()
-    sql = ("UPDATE events e SET name = '#{@name}', gold_winner = #{@gold_winner}, silver_winner = #{@silver_winner}, bronze_winner = #{@bronze_winner} WHERE e.id = #{@id}")
+    sql = "UPDATE events e SET name = '#{@name}', gold_winner = #{@gold_winner}, silver_winner = #{@silver_winner}, bronze_winner = #{@bronze_winner} WHERE e.id = #{@id}"
     SqlRunner.run(sql)
   end
 
