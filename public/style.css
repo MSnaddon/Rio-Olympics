@@ -1,11 +1,30 @@
 * {
   box-sizing: border-box;
-  font-family: "Arial Black", Gadget, sans-serif;
+  font-family: "Futura", Gadget, sans-serif;
 }
 
 h1{
+  
+}
 
+h1{
   font-family: "Marker Felt", sans-serif;
+  text-align:center;
+}
+
+h2{
+  font-family: "Herculanum", serif;
+  font-size:40px;
+  text-align:center;
+}
+
+
+
+a:visited{
+  color:blue;
+}
+.change-link {
+  font-size: 10px;
 }
 
 body {
@@ -35,9 +54,12 @@ body {
 
 
 .button {
+  border-radius: 5px;
   margin: 0px 10px;
   font-family: "";
-  display: inline-block;
+  display:flex;
+  justify-content: center;
+  align-items:center;
   height:35px;
   width:100px;
   text-decoration:none;
@@ -48,13 +70,13 @@ body {
 
 }
 
-.button :hover{
+.button:hover{
   background: linear-gradient(to bottom, #3cfc9f, #55d934);
-
+  color:black;
 }
 
-.button :active {
-  top:10px;
+.button:active {
+  margin:top:10px;
 
 }
 

@@ -1,10 +1,9 @@
-<h2>Show</h2>
+<h2>Event</h2>
+
+<h3> <%= @event.name %> <span class="change-link"><a href="/event/<%= @event.id %>/edit/ammend">Change</a></span></h3>
 
 
-
-<h3> <%= @event.name %> </h3>
-
-<% if @medalists[:gold] != nil %>
+<% if @medalists[:gold] != nil && @medalists[:silver] != nil && @medalists[:bronze] != nil %>
 <table>
   <tr>
     <th> </th>
@@ -26,8 +25,13 @@
     <td><%= @medalists[:bronze].name %></td>
     <td><%= @medalists[:bronze].nation.name %></td>
   </tr>
+<% else %>
+  <p><a href="/event/<%= @event.id %>/edit/medals">Award Medals</a></p>
 <% end %>
 </table>
+<p><a href="/event/<%= @event.id %>/edit/medals">Change Medals</a></p>
+<hr>
+
 <table>
 <tr>
 <td colspan="2">
@@ -41,22 +45,18 @@
 </tr>
 <% end %>
 </table>
-
-
-
-
-
-
-<% if @medalists[:gold] != nil  %>
 <p><a href="/participant/<%= @event.id %>">Add/Remove participants</a></p>
-<p>
-<a href="/event/<%= @event.id %>/edit/ammend">Ammend </a>
-<a href="/event/<%= @event.id %>/edit/medals">Award Medals</a>
+<hr>
+
+
+
+
+
 <form action="/event/<%= @event.id %>/delete" method="post">
   <input type="submit" value="Delete">
 </form>
 </p>
-<% end %>
+
 
 <a href="/">Home</a>
 <a href="/event">Back</a>
