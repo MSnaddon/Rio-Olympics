@@ -1,4 +1,4 @@
-<h2> Nation: <%= @nation.name %></h2>
+<h2><%= @nation.name %><a href="/nation/<%= @nation.id %>/edit" class="change-link">Edit</a></h2>
 
 <ol>
 <% @nation.athletes.each do |athlete| %>
@@ -11,8 +11,12 @@
   </li>
 <% end %>
 </ol>
-<a href="/nation">Back</a>
-<a href="/nation/<%= @nation.id %>/edit">Edit</a>
+<hr>
 <form action="/nation/<%= @nation.id %>/delete" method="post">
   <input type="submit" value="Delete">
 </form>
+
+<hr>
+
+<a href="/nation" class="btn">Back</a>
+<a href="/" class="btn">Home</a>

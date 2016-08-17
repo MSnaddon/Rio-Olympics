@@ -1,9 +1,4 @@
 <h2>list of participants</h2>
-<ul>
-  <% @participations.each do |participant| %>
-    <li><%= Athlete.find(participant.athlete_id).name %></li><form action="/participant/<%= participant.id %>/delete" method="post"><input type="submit" value="Delete"></form>
-  <% end %>
-</ul>
 
 <form action="/participant/create" method="post">
 
@@ -21,6 +16,14 @@
 
 <input type="submit" value="Add participant">
 </form>
-<a href="/event/<%= @event_id %>">Back to Event</a>
+<ul>
+  <% @participations.each do |participant| %>
+    <li><%= Athlete.find(participant.athlete_id).name %></li><form action="/participant/<%= participant.id %>/delete" method="post"><input type="submit" value="Delete"></form>
+  <% end %>
+</ul>
+
+
+<hr>
+<a href="/event/<%= @event_id %>" class="btn">Back</a>
 
 <!-- form to create, present athletes, submit evit id and corresponding athlete. remove participating ids -->

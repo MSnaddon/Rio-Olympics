@@ -1,7 +1,8 @@
 <h2>Show</h2>
 
 <h3><%= @athlete.name  %></h3>
-<p>Nation : <%= @athlete.nation.name %> </p>
+
+<p>Nation : <%= @athlete.nation.name %><a href="/athlete/<%= @athlete.id %>/edit " class='change-link'>Edit</a> </p>
 
 <table>
   <tr>
@@ -17,7 +18,7 @@
     <td><%= @result[:points] %></td>
   </tr>
 </table>
-
+<hr>
 <p><h4>Events awarded gold </h4><ul>
   <% @result[:gold].each do |event| %>
     <li><%= event.name %></li>
@@ -39,8 +40,8 @@
 <%end%>
 </ul>
 </p>
-
-<h5>Paticipated:</h5>
+<hr>
+<h4>Paticipated:</h4>
 <p>
 <ul>
   <% @athlete.participation.each do |event|  %>
@@ -49,9 +50,10 @@
 </ul>
 </p>
 
+<hr>
+<form action="/athlete/<%= @athlete.id %>/delete" method="post"><input type="submit" value="Delete">
 
-
-<p><a href="/athlete/<%= @athlete.id %>/edit ">Edit</a>
-<form action="/athlete/<%= @athlete.id %>/delete" method="post"><input type="submit" value="Delete"></form></p>
-<a href="/">Home</a>
-<a href="/athlete">Back</a>
+</form>
+<hr>
+<a href="/" class=btn>Home</a>
+<a href="/athlete" class=btn>Back</a>

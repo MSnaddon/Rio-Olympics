@@ -25,11 +25,16 @@
     <td><%= @medalists[:bronze].name %></td>
     <td><%= @medalists[:bronze].nation.name %></td>
   </tr>
+  </table>
+  <p><a href="/event/<%= @event.id %>/edit/medals">Change Medals</a></p>
 <% else %>
+  </table>
   <p><a href="/event/<%= @event.id %>/edit/medals">Award Medals</a></p>
+
 <% end %>
-</table>
-<p><a href="/event/<%= @event.id %>/edit/medals">Change Medals</a></p>
+
+
+
 <hr>
 
 <table>
@@ -57,6 +62,6 @@
 </form>
 </p>
 
-
-<a href="/">Home</a>
-<a href="/event">Back</a>
+<hr>
+<a href="/event" class="btn">Back</a>
+<a href="/" class="btn">Home</a>

@@ -9,10 +9,9 @@
   <h3>Participants</h3>
 
   <% @athletes.each do |athlete| %>
-  <p>
-  <label for="<%= athlete.name %>"><%= athlete.name %></label>
-  <input type="checkbox" name="<%= athlete.name %>" value="<%= athlete.id %>">
-  </p>
+  
+  <input type="checkbox" name="<%= athlete.name %>" value="<%= athlete.id %>"><label for="<%= athlete.name %>"><%= athlete.name %></label>
+  <br>
 
   <% end %>
 
@@ -20,5 +19,5 @@
   <input type="submit" name="add_event">
 </form>
 
-<a href="/">Home</a>
-<a href="/event">Back</a>
+<a href="/event" class="btn">Back</a>
+<a href="/" class="btn">Home</a>
