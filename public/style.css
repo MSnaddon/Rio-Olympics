@@ -59,6 +59,22 @@ body {
   margin-right: 380px;
 }
 
+.btn {
+  border-radius: 5px;
+  margin: 0px 10px;
+  font-family: "Comic sans ms";
+  display:inline-block;
+  justify-content: center;
+  align-items:center;
+  height:35px;
+  width:100px;
+  text-decoration:none;
+  text-align: center;
+  color: #23f5ff;
+  border:2px double #1122aa;
+  background: linear-gradient(to bottom, #0ba248, #1a8c20);
+
+}
 
 
 .button {
