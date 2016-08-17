@@ -18,6 +18,7 @@ h2{
   text-align:center;
 }
 
+table {width:100%;}
 
 
 a:visited{
@@ -51,12 +52,19 @@ body {
 
 }
 
+#logo img {
+  position:relative;
+  height:80px;
+  width:165px;
+  margin-right: 380px;
+}
+
 
 
 .button {
   border-radius: 5px;
   margin: 0px 10px;
-  font-family: "";
+  font-family: "Comic sans ms";
   display:flex;
   justify-content: center;
   align-items:center;
@@ -76,15 +84,25 @@ body {
 }
 
 .button:active {
-  margin:top:10px;
+  margin-top:9px;
+  align-self:flex-start;
+}
 
+.title-button-array {
+
+}
+.title-button{
+  display:flex;
+  position:relative;
+  height:100px;
+  width:100px;
+  border:5px solid black;
+  border-radius:100%;
 }
 
 #main {
   display:inline-block;
-  vertical-align: top;/*
-  border-left:1px solid #3f9f1f;
-  border-right:1px solid #3f9f1f;*/
+  vertical-align: top;
   padding-top:55px;
   background: rgba(57,150,27,0.3);
   width: 525px;
@@ -109,6 +127,8 @@ body {
   vertical-align: top;
   background:rgba(100,100,254,0.3);
   padding-top:230px;
+  padding-right:20px; 
+  padding-left:20px;
   min-height:1000px;
   width:430px;
 }
