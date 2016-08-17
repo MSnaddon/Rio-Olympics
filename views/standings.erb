@@ -2,6 +2,32 @@
 <% calc.update_standings_nations %>
 <% @current_standings = calc.standings_nations %>
 
+
+
+
+<div class="standings-row">
+ <div class="table-item">Rank</div>
+ <div class="table-item-big">Name</div>
+ <div class="table-item">Gold</div>
+ <div class="table-item">Silver</div>
+ <div class="table-item">Bronze</div>
+ <div class="table-item">Points</div>
+</div>
+<% i = 1 %>
+<% @current_standings.each do |standing| %>
+<div class="standings-row">
+  <div class="table-item"><%= i %></div>
+  <div class="table-item-big"><%= standing[:nation_name] %></div>
+  <div class="table-item"><%= standing[:gold] %></div>
+  <div class="table-item"><%= standing[:silver] %></div>
+  <div class="table-item"><%= standing[:bronze] %></div>
+  <div class="table-item"><%= standing[:points] %></div>
+</div>
+<% i += 1 %>
+<% end %>
+
+
+<!-- 
 <table>
 <tr>
   <th>Rank</th>
@@ -23,4 +49,4 @@
   </tr>
 <% i += 1 %>
 <% end %>
-</table>
+</table> -->

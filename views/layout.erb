@@ -5,6 +5,11 @@
   <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
+  <div class="navbar">
+  <a href="/nation" class="button">Nation</a>
+    <a href="/athlete" class="button">Athlete</a>
+    <a href="/event" class="button">Event</a>
+  </div>
 
   <div id="main">
     <div id="header">
@@ -15,6 +20,7 @@
     </div>
   </div>
   <div id="standings">
+    <h2>Current Standings</h2>
     <%= erb :standings %>
   </div>
 

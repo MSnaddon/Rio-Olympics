@@ -47,7 +47,7 @@
 
 
 
-
+<% if @medalists[:gold] != nil  %>
 <p><a href="/participant/<%= @event.id %>">Add/Remove participants</a></p>
 <p>
 <a href="/event/<%= @event.id %>/edit/ammend">Ammend </a>
@@ -56,6 +56,7 @@
   <input type="submit" value="Delete">
 </form>
 </p>
+<% end %>
 
 <a href="/">Home</a>
 <a href="/event">Back</a>
