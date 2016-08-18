@@ -1,4 +1,4 @@
-<form action="/event/<%= @event.id %>" method="post">
+<!-- <form action="/event/<%= @event.id %>" method="post">
   <label for="name" >Event:</label>
   <input type="text" name="name" value="<%= @event.name %>">
 
@@ -24,4 +24,47 @@
   <input type="submit" name="Make changes">
 
 
+</form> -->
+
+<% if @form == "ammend" %>
+
+<form action="/event/<%= @event.id %>" method="post">
+  <label for="name" >Event:</label>
+  <input type="text" name="name" value="<%= @event.name %>">
+
+  <input type="hidden" name="gold_winner" value="<%= @event.gold_winner %>">
+  <input type="hidden" name="silver_winner" value="<%= @event.silver_winner %>">
+  <input type="hidden" name="bronze" value="<%= @event.bronze_winner %>">
+
+  <input type="submit" name="Make changes">
 </form>
+
+<% else %> 
+<form action="/event/<%= @event.id %>" method="post">  
+  <label for="gold_winner">Gold medalist</label>
+  <select name="gold_winner">
+  <% @event.athletes.each do |athlete| %>
+    <option value="<%= athlete.id %>" <%= "selected" if @event.gold_winner == athlete.id %>><%= athlete.name %></option>
+  <% end %>
+  </select>
+  <br>
+  <label for="silver_winner">Silver medalist</label>
+  <select name="silver_winner">
+  <% @event.athletes.each do |athlete| %>
+    <option value="<%= athlete.id %>" <%= "selected" if @event.silver_winner == athlete.id %>><%= athlete.name %></option>
+  <% end %>
+  
+  </select>
+  <br>
+  <label for="bronze_winner">Bronze medalist</label>
+  <select name="bronze_winner">
+  <% @event.athletes.each do |athlete| %>
+    <option value="<%= athlete.id %>" <%= "selected" if @event.bronze_winner == athlete.id %>><%= athlete.name %></option>
+  <% end %>
+  </select>
+
+  <input type="hidden" name="name" value="<%= @event.name %>">
+  
+  <input type="submit" name="Award medal">
+</form>
+<% end %>

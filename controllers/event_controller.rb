@@ -46,8 +46,11 @@ get "/event/:id" do
 end
 
 
-get "/event/:id/edit" do
+get "/event/:id/edit?:form" do
   @event = Event.find(params[:id])
+  #####
+  @form = params[:change]
+  #####
   erb( :'event/edit' )
 end
 
@@ -57,7 +60,7 @@ post "/event/:id" do
   redirect(to("/event/#{params[:id]}"))
 end
 
-#breaking restful, curse you javascript!!!
+
 get "/event/:id/edit/ammend" do
   @event = Event.find(params[:id])
   erb(:'event/edit_ammend')

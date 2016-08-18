@@ -32,7 +32,7 @@ class Standings
       @standings_nations.push(standing)
     end
 
-    @standings_nations.sort_by!{|standing| [standing[:gold],standing[:silver], standing[:bronze]]}.reverse!
+    @standings_nations.sort_by!{|standing| [standing[:points],standing[:gold],standing[:silver], standing[:bronze]]}.reverse!
   end
 
   def self.athlete_medals(athlete)
