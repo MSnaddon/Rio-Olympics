@@ -35,7 +35,7 @@
 }
 .title-btn:hover{
   animation-name:disco;
-  animation-duration:1.6s;
+  animation-duration:0.5s;
   animation-iteration-count: infinite;
   color:black;
 }

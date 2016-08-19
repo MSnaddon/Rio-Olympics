@@ -12,8 +12,10 @@ post "/event" do
   @event = Event.new(params)
   @event.save
   event_id = @event.id
+
   participants = params.reject{|key, value|
     key == "name" || key == "add_event"}
+
   participants.each_value do |athlete_id|
     participant = Participant.new({
       'event_id' => event_id,
@@ -48,9 +50,7 @@ end
 
 get "/event/:id/edit?:form" do
   @event = Event.find(params[:id])
-  #####
   @form = params[:change]
-  #####
   erb( :'event/edit' )
 end
 
@@ -61,12 +61,12 @@ post "/event/:id" do
 end
 
 
-get "/event/:id/edit/ammend" do
-  @event = Event.find(params[:id])
-  erb(:'event/edit_ammend')
-end
+# get "/event/:id/edit/ammend" do
+#   @event = Event.find(params[:id])
+#   erb(:'event/edit_ammend')
+# end
 
-get "/event/:id/edit/medals" do
-  @event = Event.find(params[:id])
-  erb(:'event/edit_medals')
-end
+# get "/event/:id/edit/medals" do
+#   @event = Event.find(params[:id])
+#   erb(:'event/edit_medals')
+# end
